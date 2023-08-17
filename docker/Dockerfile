@@ -25,6 +25,7 @@ RUN mkdir -p /app/loconotion/
 WORKDIR /app/loconotion/
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+RUN pip install webdriver-manager
 
 COPY . .
 ENTRYPOINT [ "python", "loconotion", "--chromedriver", "/chromedriver/chromedriver"]
