@@ -13,7 +13,7 @@ RUN wget --no-verbose -O /tmp/chrome.deb https://dl.google.com/linux/direct/goog
 # RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 # RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
 # Set up Chromedriver Environment variables
-ENV CHROMEDRIVER_VERSION 99.0.4844.51
+ENV CHROMEDRIVER_VERSION 114.0.5735.90
 ENV CHROMEDRIVER_DIR /chromedriver
 RUN mkdir $CHROMEDRIVER_DIR
 # Download and install Chromedriver
