@@ -22,6 +22,7 @@ try:
     from selenium.common.exceptions import TimeoutException
     from selenium.webdriver.chrome.options import Options
     from selenium.webdriver.support.ui import WebDriverWait
+    from webdriver_manager.chrome import ChromeDriverManager
 
     cssutils.log.setLevel(logging.CRITICAL)  # removes warning logs from cssutils
 except ModuleNotFoundError as error:
@@ -241,8 +242,7 @@ class Parser:
         #  removes the 'DevTools listening' log message
         chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
         return webdriver.Chrome(
-            executable_path=str(chromedriver_path),
-            service_log_path=str(logs_path),
+            ChromeDriverManager().install(),
             options=chrome_options,
         )
 
